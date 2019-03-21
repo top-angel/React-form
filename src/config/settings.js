@@ -1,7 +1,5 @@
 let settings;
 
-settings = {
-
-};
+settings = {};
 
 export default settings;

@@ -57,14 +57,13 @@ export const xapi = () => {
       store.dispatch(logout());
     }
 
-    if (typeof err.response === "undefined") {
+    if (typeof err.response === 'undefined') {
       throw err;
     }
 
     if (err.response && err.response.status !== 200) {
       throw err.response;
     }
-
   });
 
   return xapi;
@@ -111,11 +110,13 @@ export const getBase64 = file => {
 };
 
 export const csv2array = (data, delimeter) => {
-// Retrieve the delimeter
-  if (delimeter == undefined)
+  // Retrieve the delimeter
+  if (delimeter == undefined) {
     delimeter = ',';
-  if (delimeter && delimeter.length > 1)
+  }
+  if (delimeter && delimeter.length > 1) {
     delimeter = ',';
+  }
 
   // initialize variables
   var newline = '\n';
@@ -133,49 +134,55 @@ export const csv2array = (data, delimeter) => {
     }
 
     // get value
-    var value = "";
-    if (c == '\"') {
+    var value = '';
+    if (c == '"') {
       // value enclosed by double-quotes
       c = data.charAt(++i);
 
       do {
-        if (c != '\"') {
+        if (c != '"') {
           // read a regular character and go to the next character
           value += c;
           c = data.charAt(++i);
         }
 
-        if (c == '\"') {
+        if (c == '"') {
           // check for escaped double-quote
-          var cnext = data.charAt(i+1);
-          if (cnext == '\"') {
+          var cnext = data.charAt(i + 1);
+          if (cnext == '"') {
             // this is an escaped double-quote.
             // Add a double-quote to the value, and move two characters ahead.
-            value += '\"';
+            value += '"';
             i += 2;
             c = data.charAt(i);
           }
         }
-      }
-      while (c != eof && c != '\"');
+      } while (c != eof && c != '"');
 
       if (c == eof) {
-        throw "Unexpected end of data, double-quote expected";
+        throw 'Unexpected end of data, double-quote expected';
       }
 
       c = data.charAt(++i);
-    }
-    else {
+    } else {
       // value without quotes
-      while (c != eof && c != delimeter && c!= newline && c != ' ' && c != '\t' && c != '\r') {
+      while (
+        c != eof &&
+        c != delimeter &&
+        c != newline &&
+        c != ' ' &&
+        c != '\t' &&
+        c != '\r'
+      ) {
         value += c;
         c = data.charAt(++i);
       }
     }
 
     // add the value to the array
-    if (array.length <= row)
+    if (array.length <= row) {
       array.push(new Array());
+    }
     array[row].push(value);
 
     // skip whitespaces
@@ -187,15 +194,13 @@ export const csv2array = (data, delimeter) => {
     if (c == delimeter) {
       // to the next column
       col++;
-    }
-    else if (c == newline) {
+    } else if (c == newline) {
       // to the next row
       col = 0;
       row++;
-    }
-    else if (c != eof) {
+    } else if (c != eof) {
       // unexpected character
-      throw "Delimiter expected after character " + i;
+      throw 'Delimiter expected after character ' + i;
     }
 
     // go to the next character

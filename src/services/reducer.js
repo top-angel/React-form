@@ -8,8 +8,9 @@ import { routerReducer } from 'react-router-redux';
 // Import modal reducers
 import modalReducer from '../modals/modalConductorReducer';
 
-const servicesReducer = combineReducers({
-});
+/*const servicesReducer = combineReducers({
+})*/
+const servicesReducer = {};
 
 export default combineReducers({
   routing: routerReducer,
