@@ -32,7 +32,6 @@ export default class TopBar extends React.Component {
   }
 
   showPreview() {
-    console.log('show preview clicked');
     this.setState({
       previewVisible: true
     });
@@ -86,8 +85,6 @@ export default class TopBar extends React.Component {
       roModalClass += ' show';
     }
 
-    console.log(this.state.previewVisible);
-    console.log(modalClass);
     return (
       <div className="clearfix" style={{ margin: '10px', width: '70%' }}>
         <h4 className="pull-left">Preview</h4>
