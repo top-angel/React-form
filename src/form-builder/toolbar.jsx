@@ -167,6 +167,14 @@ export default class Toolbar extends React.Component {
         field_name: 'email_input_'
       },
       {
+        key: 'PasswordInput',
+        canHaveAnswer: true,
+        name: 'Password',
+        label: 'Password',
+        icon: 'fa fa-lock',
+        field_name: 'password_input_'
+      },
+      {
         key: 'NumberInput',
         canHaveAnswer: true,
         name: 'Number Input',
