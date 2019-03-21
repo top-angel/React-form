@@ -8,6 +8,7 @@ let {
   Label,
   LineBreak,
   TextInput,
+  EmailInput,
   NumberInput,
   MaskInput,
   TextArea,
@@ -30,6 +31,7 @@ Paragraph = SortableElement(Paragraph);
 Label = SortableElement(Label);
 LineBreak = SortableElement(LineBreak);
 TextInput = SortableElement(TextInput);
+EmailInput = SortableElement(EmailInput);
 NumberInput = SortableElement(NumberInput);
 MaskInput = SortableElement(MaskInput);
 TextArea = SortableElement(TextArea);
@@ -54,6 +56,7 @@ export {
   Label,
   LineBreak,
   TextInput,
+  EmailInput,
   NumberInput,
   MaskInput,
   TextArea,

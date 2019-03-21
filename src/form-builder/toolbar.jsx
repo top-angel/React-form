@@ -159,6 +159,14 @@ export default class Toolbar extends React.Component {
         field_name: 'text_input_'
       },
       {
+        key: 'EmailInput',
+        canHaveAnswer: true,
+        name: 'Email',
+        label: 'Email',
+        icon: 'fa fa-envelope',
+        field_name: 'email_input_'
+      },
+      {
         key: 'NumberInput',
         canHaveAnswer: true,
         name: 'Number Input',
