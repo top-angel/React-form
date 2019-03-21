@@ -260,6 +260,7 @@ export default class ReactForm extends React.Component {
       switch (item.element) {
         case 'TextInput':
         case 'NumberInput':
+        case 'MaskInput':
         case 'TextArea':
         case 'Dropdown':
         case 'DatePicker':

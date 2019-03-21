@@ -9,6 +9,7 @@ let {
   LineBreak,
   TextInput,
   NumberInput,
+  MaskInput,
   TextArea,
   Dropdown,
   Checkboxes,
@@ -30,6 +31,7 @@ Label = SortableElement(Label);
 LineBreak = SortableElement(LineBreak);
 TextInput = SortableElement(TextInput);
 NumberInput = SortableElement(NumberInput);
+MaskInput = SortableElement(MaskInput);
 TextArea = SortableElement(TextArea);
 Dropdown = SortableElement(Dropdown);
 Signature = SortableElement(Signature);
@@ -53,6 +55,7 @@ export {
   LineBreak,
   TextInput,
   NumberInput,
+  MaskInput,
   TextArea,
   Dropdown,
   Checkboxes,

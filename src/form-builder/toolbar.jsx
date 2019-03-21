@@ -167,6 +167,16 @@ export default class Toolbar extends React.Component {
         field_name: 'number_input_'
       },
       {
+        key: 'MaskInput',
+        canHaveAnswer: true,
+        name: 'Mask Input',
+        label: 'Placeholder Label',
+        icon: 'fa fa-phone',
+        field_name: 'mask_input_',
+        mask: '+7 (999) 999-99-99',
+        maskChar: ''
+      },
+      {
         key: 'TextArea',
         canHaveAnswer: true,
         name: 'Multi-line Input',
@@ -309,6 +319,11 @@ export default class Toolbar extends React.Component {
       elementOptions.max_value = item.max_value;
       elementOptions.min_label = item.min_label;
       elementOptions.max_label = item.max_label;
+    }
+
+    if (item.key === 'MaskInput') {
+      elementOptions.mask = item.mask;
+      elementOptions.maskChar = item.maskChar;
     }
 
     if (item.defaultValue) {

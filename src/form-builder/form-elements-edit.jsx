@@ -410,6 +410,34 @@ export default class FormElementsEdit extends React.Component {
           <div />
         )}
 
+        {/* Mask Input*/}
+        {this.state.element.element === 'MaskInput' && (
+          <div>
+            <div className="form-group">
+              <label>Mask</label>
+              <input
+                id="maskInput"
+                type="text"
+                className="form-control"
+                defaultValue={this.props.element.mask}
+                onBlur={this.updateElement.bind(this)}
+                onChange={this.editElementProp.bind(this, 'mask', 'value')}
+              />
+            </div>
+            <div className="form-group">
+              <label>Mask char</label>
+              <input
+                id="maskCharInput"
+                type="text"
+                className="form-control"
+                defaultValue={this.props.element.maskChar}
+                onBlur={this.updateElement.bind(this)}
+                onChange={this.editElementProp.bind(this, 'maskChar', 'value')}
+              />
+            </div>
+          </div>
+        )}
+
         <div className="form-group">
           <label className="control-label">Print Options</label>
           <div className="checkbox">
