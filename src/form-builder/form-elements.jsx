@@ -6,6 +6,7 @@ import { format, parse } from 'date-fns';
 import SignaturePad from 'react-signature-canvas';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
 import ReactDatePicker from 'react-datepicker';
+import ReactInputMask from 'react-input-mask';
 import StarRating from './star-rating';
 import HeaderBar from './header-bar';
 
@@ -41,7 +42,7 @@ const ComponentLabel = props => {
         dangerouslySetInnerHTML={{ __html: myxss.process(props.data.label) }}
       />
       {hasRequiredLabel && (
-        <span className="label-required label label-danger">Required</span>
+        <span className="label-required badge badge-danger">Required</span>
       )}
     </label>
   );
@@ -242,6 +243,44 @@ class NumberInput extends React.Component {
         <div className="form-group">
           <ComponentLabel {...this.props} />
           <input {...props} />
+        </div>
+      </div>
+    );
+  }
+}
+
+class MaskInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.inputField = React.createRef();
+  }
+
+  render() {
+    const props = {};
+    props.type = 'text';
+    props.className = 'form-control';
+    props.name = this.props.data.field_name;
+    props['mask'] = this.props.data.mask;
+    if (this.props.mutable) {
+      props.defaultValue = this.props.defaultValue;
+      props.ref = this.inputField;
+    }
+
+    let baseClasses = 'SortableItem rfb-item';
+    if (this.props.data.pageBreakBefore) {
+      baseClasses += ' alwaysbreak';
+    }
+
+    if (this.props.read_only) {
+      props.disabled = 'disabled';
+    }
+
+    return (
+      <div className={baseClasses}>
+        <ComponentHeader {...this.props} />
+        <div className="form-group">
+          <ComponentLabel {...this.props} />
+          <ReactInputMask {...props} />
         </div>
       </div>
     );
@@ -1053,6 +1092,7 @@ export {
   LineBreak,
   TextInput,
   NumberInput,
+  MaskInput,
   TextArea,
   Dropdown,
   Signature,
