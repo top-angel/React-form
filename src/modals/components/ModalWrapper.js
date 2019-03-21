@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from 'react-bootstrap';
 
 // Import actions
 import { hideModal } from '../modalConductorActions';
@@ -32,11 +38,7 @@ class ModalWrapper extends React.Component {
 
   render() {
     return (
-      <Modal
-        isOpen={true}
-        toggle={this.hideModal}
-        className="modal-dialog-centered"
-      >
+      <Modal isOpen toggle={this.hideModal} className="modal-dialog-centered">
         <ModalHeader> {this.props.title} </ModalHeader>
 
         <ModalBody>{this.props.children}</ModalBody>

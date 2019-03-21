@@ -11,10 +11,8 @@ import App from './scenes/App';
 
 // Import assets
 import './assets/fonts/font-awesome/css/font-awesome.css';
-import 'aos/dist/aos.css';
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
-import 'react-toggle-switch/dist/css/switch.min.css';
-import 'assets/scss/arg-ai-frontend.css';
+import 'assets/scss/app.css';
 import 'global.css';
 
 // Import register service worker
