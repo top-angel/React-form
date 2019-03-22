@@ -848,6 +848,65 @@ class RadioButtons extends React.Component {
   }
 }
 
+class Switch extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isChecked: props.data.defaultValue || false
+    };
+
+    // Bind functions
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange() {
+    console.log('handle change is called');
+    this.setState({ isChecked: !this.state.isChecked });
+  }
+
+  render() {
+    const props = {};
+    props.name = this.props.data.field_name;
+    props.type = 'checkbox';
+    props['data-switch'] = 'none';
+    props.value = this.state.isChecked;
+    props.onChange = this.handleChange;
+
+    const labelProps = {};
+    labelProps['data-on-label'] = 'On';
+    labelProps['data-off-label'] = 'Off';
+
+    let baseClasses = 'SortableItem rfb-item';
+    if (this.props.data.pageBreakBefore) {
+      baseClasses += ' alwaysbreak';
+    }
+
+    if (this.props.read_only) {
+      props.disabled = 'disabled';
+    }
+
+    return (
+      <div className={baseClasses}>
+        <ComponentHeader {...this.props} />
+        <ComponentLabel {...this.props} />
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              onChange={this.handleChange}
+              name={props.name}
+              value={props.value}
+              data-switch="bool"
+              id={props.name}
+            />
+            <div data-on-label="On" data-off-label="Off" />
+          </label>
+        </div>
+      </div>
+    );
+  }
+}
+
 class Image extends React.Component {
   render() {
     const style = this.props.data.center ? { textAlign: 'center' } : null;
@@ -1175,6 +1234,7 @@ export {
   Checkboxes,
   DatePicker,
   RadioButtons,
+  Switch,
   Image,
   Rating,
   Tags,
