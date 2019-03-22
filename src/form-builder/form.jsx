@@ -261,6 +261,7 @@ export default class ReactForm extends React.Component {
         case 'TextInput':
         case 'NumberInput':
         case 'MaskInput':
+        case 'Switch':
         case 'TextArea':
         case 'Dropdown':
         case 'DatePicker':

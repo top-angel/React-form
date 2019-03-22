@@ -201,6 +201,16 @@ export default class Toolbar extends React.Component {
         field_name: 'text_area_'
       },
       {
+        key: 'Switch',
+        canHaveAnswer: true,
+        name: 'Switch',
+        label: 'Switch',
+        icon: 'fa fa-toggle-on',
+        field_name: 'switch_',
+        dataSwitch: 'none',
+        defaultValue: true
+      },
+      {
         key: 'Image',
         name: 'Image',
         label: '',

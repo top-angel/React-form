@@ -17,6 +17,7 @@ let {
   Checkboxes,
   DatePicker,
   RadioButtons,
+  Switch,
   Image,
   Rating,
   Tags,
@@ -42,6 +43,7 @@ Signature = SortableElement(Signature);
 Checkboxes = SortableElement(Checkboxes);
 DatePicker = SortableElement(DatePicker);
 RadioButtons = SortableElement(RadioButtons);
+Switch = SortableElement(Switch);
 Image = SortableElement(Image);
 Rating = SortableElement(Rating);
 Tags = SortableElement(Tags);
@@ -67,6 +69,7 @@ export {
   Checkboxes,
   DatePicker,
   RadioButtons,
+  Switch,
   Image,
   Rating,
   Tags,

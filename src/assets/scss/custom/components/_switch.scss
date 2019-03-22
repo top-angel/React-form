@@ -7,7 +7,7 @@
 input[data-switch] {
     display: none;
 
-    + label {
+    + div {
         width: 56px;
         height: 24px;
         background-color: $gray-100;
@@ -50,7 +50,7 @@ input[data-switch] {
         }
     }
     &:checked {
-        +label {
+        +div {
             background-color: $primary;
             &:before {
                 color: $white;
@@ -67,22 +67,22 @@ input[data-switch] {
 }
 
 input[data-switch="bool"] {
-    + label {
+    + div {
         background-color: $danger;
     }
 }
 
-input[data-switch="bool"]+label:before,
-input[data-switch="bool"]:checked+label:before {
+input[data-switch="bool"]+div:before,
+input[data-switch="bool"]:checked+div:before {
     color: $white !important;
 }
 
-input[data-switch="bool"]+label:after {
+input[data-switch="bool"]+div:after {
     background-color: $gray-100;
 }
 
 @each $color,$value in $theme-colors {
-    input[data-switch="#{$color}"]:checked+label {
+    input[data-switch="#{$color}"]:checked+div {
         background-color: #{$value};
     }
 }
