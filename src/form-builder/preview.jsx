@@ -114,6 +114,8 @@ export default class Preview extends React.Component {
   }
 
   getElement(item, index) {
+    console.log(item);
+    console.log(index);
     const SortableFormElement = SortableFormElements[item.element];
     return (
       <SortableFormElement

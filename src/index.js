@@ -10,7 +10,6 @@ import store, { history } from './store';
 import App from './scenes/App';
 
 // Import assets
-import './assets/fonts/font-awesome/css/font-awesome.css';
 import 'react-redux-toastr/lib/css/react-redux-toastr.min.css';
 import 'assets/scss/app.css';
 import 'global.css';
