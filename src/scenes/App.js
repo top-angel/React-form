@@ -15,7 +15,11 @@ class App extends React.Component {
       <main>
         <Router>
           <Switch>
-            <Route path="/" exact render={props => <Home {...props} />} />
+            <Route
+              path="/"
+              exact
+              render={props => <FormBuilderScene {...props} />}
+            />
             <Route
               path="/form-builder"
               render={props => <FormBuilderScene {...props} />}
